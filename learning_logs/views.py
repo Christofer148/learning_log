@@ -22,7 +22,9 @@ def topic(request, topic_id):
     """Show a single topic and all its entries."""
     topic = Topic.objects.get(id=topic_id)
     # Make sure the topic belongs to the current user.
-    if topic.owner != request:
+    if topic.owner != request.user:
+        print(topic.owner)
+        print(request)
         raise Http404
     
     entries = topic.entry_set.order_by('-date_added')

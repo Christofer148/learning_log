@@ -24,5 +24,3 @@ urlpatterns = [
     re_path(r'^users/', include(('users.urls', 'users'), namespace='users')),
     re_path(r'', include(('learning_logs.urls', 'learning_logs'), namespace='learning_logs')),
 ]
-
-### 479
